@@ -10,7 +10,7 @@ class ThreadName implements  Runnable {
 		}
 	}
 }
-public class MultiThreading {
+public class DaemonThread {
 	public static void main(String[] args) {
 		
 		System.out.println("Current Thread Name : " + Thread.currentThread().getName() + " | Current Thread Priority : "
