@@ -1,46 +1,43 @@
 package com.neml.java.multithreading;
 
+import java.util.*;
+
 public class EvenOddNumber {
 
-	static int num = 1;
+	static int arr[] = new int[] { 1, 6, 3, 8, 4 };
+	static List<Integer> evenList = new ArrayList<>();
+	static List<Integer> oddList = new ArrayList<>();
 
 	public static void main(String[] args) {
 
-		getEvenNumber th1 = new getEvenNumber();
+		NatureOfNum();
+		Thread th = new Thread() {
+
+			public void run() {
+
+				System.out.println("List of even number -> " + evenList);
+			}
+		};
+
+		Thread th1 = new Thread() {
+			public void run() {
+				System.out.println("List of odd number -> " + oddList);
+			}
+		};
+
+		th.start();
 		th1.start();
 
-		getOddNumber th2 = new getOddNumber();
-		th2.start();
-
 	}
 
-}
-
-class getEvenNumber extends Thread {
-
-	@Override
-	public void run() {
-
-		if (EvenOddNumber.num % 2 == 0) {
-			System.out.println(EvenOddNumber.num + " is an even number.");
-		} else {
-			System.out.println(EvenOddNumber.num + " is not an even number.");
+	static void NatureOfNum() {
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] % 2 == 0) {
+				evenList.add(arr[i]);
+			} else {
+				oddList.add(arr[i]);
+			}
 		}
-
-	}
-}
-
-class getOddNumber extends Thread {
-
-	@Override
-	public void run() {
-
-		if (EvenOddNumber.num % 2 != 0) {
-			System.out.println(EvenOddNumber.num + " is an odd number.");
-		} else {
-			System.out.println(EvenOddNumber.num + " is not an odd number.");
-		}
-
 	}
 
 }

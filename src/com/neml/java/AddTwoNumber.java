@@ -5,7 +5,7 @@ public class AddTwoNumber {
 	public static void main(String[] args) {
 	
 	int[] nums= {2,7,11,15,6};
-	int target=8;
+	int target=17;
 	int[] result =  twoSum(nums,target);
 	System.out.print("[" + result[0] + ", " + result[1] + "]");
 	
@@ -17,7 +17,7 @@ public class AddTwoNumber {
 			 for(int j=i+1;j<nums.length;j++) {
 				 
 				 if(nums[i]+nums[j]==target) {
-					 return new int[]{i, j};
+					 return new int[] {i, j};
 				 }
 			 }
 		 }
