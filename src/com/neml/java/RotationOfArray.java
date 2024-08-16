@@ -11,7 +11,7 @@ public class RotationOfArray {
 	public static void main(String[] args) {
 
 		int[] nums = { 1,2,3,4,5,6,7 };
-		int k = 3;
+		int k = 4;
 		k = k % nums.length;
 		List<Integer> ls = new ArrayList<>();
 		for (int n : nums) {
